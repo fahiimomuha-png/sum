@@ -1,28 +1,107 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Simple Project</title>
+    <title>Advanced GitHub Projects</title>
+
     <style>
-        body { 
-            font-family: Arial; 
-            text-align: center; 
-            padding: 50px; 
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            font-family: Arial, sans-serif;
         }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            width: 90%;
+            max-width: 900px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+        }
+
+        h1 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #222;
+        }
+
+        p {
+            color: #555;
+            font-size: 15px;
+        }
+
         button {
-            padding: 10px 20px;
+            margin-top: 15px;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            background: #2c5364;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #203a43;
+            transform: scale(1.05);
+        }
+
+        .hard {
+            border: 2px solid #ff4b2b;
+        }
+
+        .hard h1 {
+            color: #ff4b2b;
         }
     </style>
 </head>
+
 <body>
 
-<h1>Welcome to My GitHub Project</h1>
+<div class="container">
 
-<button onclick="document.getElementById('msg').innerText='Button clicked!'">
-    Click Me
-</button>
+    <!-- Simple Project -->
+    <div class="card">
+        <h1>Simple Project</h1>
+        <p>A beginner-friendly project using HTML, CSS, and JavaScript.</p>
+        <button onclick="alert('Simple Project Running')">Run Project</button>
+    </div>
 
-<p id="msg"></p>
+    <!-- Hard Project -->
+    <div class="card hard">
+        <h1>Hard Project</h1>
+        <p>
+            Advanced web application with:
+            <br>• Dynamic data
+            <br>• LocalStorage
+            <br>• Multiple pages
+            <br>• Clean UI & logic
+        </p>
+        <button onclick="runHardProject()">Start Hard Project</button>
+        <p id="hardMsg"></p>
+    </div>
+
+</div>
+
+<script>
+    function runHardProject() {
+        document.getElementById("hardMsg").innerText =
+            "🚀 Hard Project Started! Features loading...";
+    }
+</script>
 
 </body>
 </html>
